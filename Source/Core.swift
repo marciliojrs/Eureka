@@ -2528,8 +2528,6 @@ public class FormViewController : UIViewController, FormViewControllerProtocol {
     public override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if let selectedIndexPath = tableView?.indexPathForSelectedRow {
-            tableView?.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
-            tableView?.selectRowAtIndexPath(selectedIndexPath, animated: false, scrollPosition: .None)
             tableView?.deselectRowAtIndexPath(selectedIndexPath, animated: true)
         }
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
